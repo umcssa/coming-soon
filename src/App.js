@@ -20,11 +20,18 @@ class App extends Component {
         return (
             <div>
                 {window.innerWidth < 768 ? <RateMyProfessorNavbarCollapse/> : <RateMyProfessorNavbar/>}
-                <div style={{textAlign: 'center'}}>
-                    <img src={construct} style={{
-                        width: '100%',
-                    }}/>
-                    <p>Coming Soon</p>
+                <div style={{
+                    textAlign: 'center', height: window.innerWidth < 768 ? 600 : window.innerHeight,
+                    background: `url(${construct}) no-repeat center center`
+                }}>
+                    <div style={{position:'absolute',width:'100%'}}>
+                        <p style={{marginTop: 100, fontSize: window.innerWidth < 768 ? 50 : 100}}>敬请期待</p>
+                        <p style={{
+                            fontSize: window.innerWidth < 768 ? 40 : 80,
+                            marginTop: window.innerWidth < 768 ? -50 : -120
+                        }}>Coming Soon</p>
+                    </div>
+
                 </div>
             </div>
         );
